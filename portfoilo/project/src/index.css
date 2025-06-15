@@ -1,0 +1,157 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-background-dark text-white font-sans;
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl font-bold;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold;
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl font-semibold;
+  }
+
+  h4 {
+    @apply text-xl md:text-2xl font-semibold;
+  }
+
+  p {
+    @apply text-base leading-relaxed;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply px-4 sm:px-6 md:px-8 mx-auto max-w-7xl;
+  }
+
+  .gradient-text {
+    @apply text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-400;
+  }
+
+  .btn-primary {
+    @apply px-6 py-3 text-white bg-primary-600 rounded-full hover:bg-primary-700 transition-all duration-300 font-medium;
+  }
+
+  .btn-secondary {
+    @apply px-6 py-3 text-white bg-secondary-600 rounded-full hover:bg-secondary-700 transition-all duration-300 font-medium;
+  }
+
+  .btn-accent {
+    @apply px-6 py-3 text-white bg-accent-600 rounded-full hover:bg-accent-700 transition-all duration-300 font-medium;
+  }
+
+  .card {
+    @apply rounded-xl bg-gray-800/50 backdrop-blur-sm p-6 border border-gray-700 hover:border-primary-500 transition-all duration-300;
+  }
+
+  .gradient-border {
+    @apply relative rounded-xl p-[1px] bg-gradient-to-r from-primary-500 to-secondary-500 overflow-hidden;
+  }
+
+  .gradient-border-content {
+    @apply bg-gray-900 rounded-xl relative z-10 p-6;
+  }
+
+  .glow {
+    @apply absolute -inset-0.5 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-lg blur opacity-30 group-hover:opacity-100 transition duration-1000 group-hover:duration-200;
+  }
+}
+
+.section-padding {
+  @apply py-20;
+}
+
+.page-transition-container {
+  @apply w-full min-h-screen flex flex-col;
+}
+
+/* Gradient background effect */
+.gradient-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -10;
+  background: radial-gradient(circle at 50% 50%, #111827, #030712);
+}
+
+/* Custom gradient spots */
+.gradient-spot {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.15;
+  z-index: -5;
+}
+
+.gradient-spot-1 {
+  top: 10%;
+  left: 15%;
+  width: 40vw;
+  height: 40vw;
+  background: radial-gradient(circle, rgba(14, 165, 233, 0.3), transparent 70%);
+  animation: float 10s ease-in-out infinite;
+}
+
+.gradient-spot-2 {
+  bottom: 20%;
+  right: 15%;
+  width: 30vw;
+  height: 30vw;
+  background: radial-gradient(circle, rgba(20, 184, 166, 0.3), transparent 70%);
+  animation: float 13s ease-in-out infinite reverse;
+}
+
+.gradient-spot-3 {
+  top: 40%;
+  right: 25%;
+  width: 25vw;
+  height: 25vw;
+  background: radial-gradient(circle, rgba(245, 158, 11, 0.15), transparent 70%);
+  animation: float 18s ease-in-out infinite;
+}
+
+/* Hide scrollbar but allow scrolling */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* For Firefox */
+html {
+  scrollbar-width: none;
+}
+
+/* For 3D card effects */
+.card-3d {
+  transform-style: preserve-3d;
+  transition: transform 0.3s ease;
+}
+
+/* Cursor-following animation */
+.cursor-follow {
+  transition: transform 0.2s ease-out;
+}
+
+/* Floating animation for 3D objects */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
